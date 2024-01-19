@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "image-search-cli"
+version = "1.0.0"
+description = ""
+authors = [ "Anthony Y. Zhu <anthonyzhu1114@gmail.com>"]
+readme = "README.md"
+
+packages = [{include = "src"}]
+
+[tool.poetry.scripts]
+scan = "src.cli.scan:run"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytesseract = "^0.3.10"
+opencv-python = "^4.7.0.72"
+numpy = "^1.24.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
