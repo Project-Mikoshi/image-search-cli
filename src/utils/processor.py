@@ -1,6 +1,7 @@
 import os
 import pytesseract
 import cv2 as cv
+from pathlib import Path
 
 def search_text_in_image_text (image_path: str, search_text: str, output_directory: str):
     image = cv.imread(image_path)
@@ -38,5 +39,5 @@ def _output_result (image: cv.Mat, image_path: str, output_directory: str):
 
     cv.imwrite(output_path, image)
 
-    with open(os.path.join(output_directory, "result.txt"), "w") as result_file:
-        print(f"path: {image_path}, highlighted image name: {image_name}\n", file=result_file)
+    with open(os.path.join(output_directory, f"{Path(image_path).stem}-path.txt"), "w") as result_file:
+        result_file.write(image_path)
