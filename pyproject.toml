@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "image-search-cli"
-version = "1.0.0"
+name = "ink-spotter-cli"
+version = "0.1.0"
 description = ""
 authors = [ "Anthony Y. Zhu <anthonyzhu1114@gmail.com>"]
 readme = "README.md"
@@ -8,13 +8,24 @@ readme = "README.md"
 packages = [{include = "src"}]
 
 [tool.poetry.scripts]
-scan = "src.cli.scan:run"
+app = "src.cli.app:run"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 pytesseract = "^0.3.10"
 opencv-python = "^4.7.0.72"
 numpy = "^1.24.2"
+art = "^6.1"
+typer = "^0.9.0"
+rich = "^13.7.0"
+pyinquirer = "^1.0.3"
+progress = "^1.6"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.10.1"
+
+[tool.black]
+line-length = 150
 
 [build-system]
 requires = ["poetry-core"]
